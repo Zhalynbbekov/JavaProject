@@ -54,4 +54,25 @@ public class Director {
             }
         
     }
+
+    public void register(){
+        System.out.println("Enter a new login: ");
+        String newLogin = scan.nextLine();
+        if(newLogin==null || newLogin.isBlank()){
+            throw new IllegalArgumentException("The new login cannot be null or blank");
+        }else{
+            newLogin=login;
+            newLogin=getLogin();
+            System.out.println("Enter a new password: ");
+            String newPassword = scan.nextLine();
+            if(newPassword==null || newPassword.isBlank()){
+                throw new IllegalArgumentException("The new login cannot be null or blank");
+            }else{
+                newPassword=login;
+                newPassword=getLogin();
+                System.out.println("You have successfully registered.");
+                login();
+            }
+        }
+    }
 }
